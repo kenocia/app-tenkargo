@@ -524,6 +524,14 @@ footer .fmeta{ font-size:12.5px; color:var(--text-dim); }
 .who-g{ background:rgba(46,78,219,.18); color:#8FA3F5; }
 .who-both{ background:rgba(34,198,183,.18); color:var(--teal-2); }
 .tl-week--launch{ background:var(--grad-soft); }
+.pmo-box{ margin-top:44px; display:flex; gap:20px; padding:26px 28px; border-radius:16px; background:rgba(34,198,183,.06); border:1px solid rgba(34,198,183,.28); }
+.pmo-icon{ font-size:28px; flex-shrink:0; }
+.pmo-box b{ display:block; font-size:15px; margin-bottom:8px; }
+.pmo-box p{ font-size:13.5px; color:var(--text-muted); line-height:1.6; }
+.pmo-checkpoint{
+  grid-column:1/-1; background:rgba(34,198,183,.05); border-top:1px dashed var(--border-2);
+  padding:11px 22px; font-size:12px; color:var(--teal-2); font-family:'JetBrains Mono',monospace; line-height:1.5;
+}
 
 /* ---------- DEV SITE: diagramas ---------- */
 .diagram-grid{ display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:44px; }
@@ -656,44 +664,94 @@ footer .fmeta{ font-size:12.5px; color:var(--text-dim); }
       <p class="section-sub">Fechas objetivo por entregable. Ajustable si cambian prioridades, pero esta es la referencia de avance.</p>
     </div>
 
+    <div class="pmo-box reveal">
+      <div class="pmo-icon">🗓️</div>
+      <div>
+        <b>Control de proyecto — formato PMO</b>
+        <p>Reunión semanal de seguimiento todos los <b>sábados de 8:00 a. m. a 12:00 p. m.</b>, en las oficinas de Kenocia. Agenda fija: avance vs. cronograma, demo de lo construido esa semana, bloqueos, riesgos y compromisos para la semana siguiente. Asistencia obligatoria de Roberto y Gilberto; Jorge coordina como PM.</p>
+      </div>
+    </div>
+
     <div class="timeline reveal">
       <div class="tl-month">
         <div class="tl-month-head"><span class="tl-m">Mes 1</span><span class="tl-d">Agosto 2026</span></div>
         <div class="tl-weeks">
-          <div class="tl-week"><b>Semana 1-2</b><span class="who who-g">Gilberto</span><p>Relevamiento funcional final, modelo de datos Odoo, arquitectura de infraestructura (servidores, Redis, staging)</p></div>
-          <div class="tl-week"><b>Semana 1-2</b><span class="who who-r">Roberto</span><p>Wireframes y diseño de flujo completo del consumidor; definición de arquitectura de navegación de la app</p></div>
-          <div class="tl-week"><b>Semana 3-4</b><span class="who who-g">Gilberto</span><p>Modelos base en Odoo: comercio, sucursal, oferta, disponibilidad. Ambiente de desarrollo listo</p></div>
-          <div class="tl-week"><b>Semana 3-4</b><span class="who who-r">Roberto</span><p>UI kit / sistema de diseño inicial (placeholder de marca), setup del proyecto Flutter</p></div>
+          <div class="tl-week"><b>Semana 1</b><span class="who who-g">Gilberto</span><p>Relevamiento funcional final y definición del modelo de datos Odoo</p></div>
+          <div class="tl-week"><b>Semana 1</b><span class="who who-r">Roberto</span><p>Wireframes de las pantallas core: discover, detalle de oferta, checkout</p></div>
+          <div class="pmo-checkpoint">🗓 Sábado 1 de agosto · Revisión PMO — kickoff, alineación de alcance y primeros wireframes/modelo de datos</div>
+
+          <div class="tl-week"><b>Semana 2</b><span class="who who-g">Gilberto</span><p>Arquitectura de infraestructura: servidores, Redis, ambientes de staging</p></div>
+          <div class="tl-week"><b>Semana 2</b><span class="who who-r">Roberto</span><p>Arquitectura de navegación y flujo completo del consumidor</p></div>
+          <div class="pmo-checkpoint">🗓 Sábado 8 de agosto · Revisión PMO — demo de ambientes listos, validación de flujo de navegación</div>
+
+          <div class="tl-week"><b>Semana 3</b><span class="who who-g">Gilberto</span><p>Modelos base en Odoo: comercio, sucursal, oferta</p></div>
+          <div class="tl-week"><b>Semana 3</b><span class="who who-r">Roberto</span><p>UI kit / sistema de diseño inicial (tokens placeholder de Kenocia)</p></div>
+          <div class="pmo-checkpoint">🗓 Sábado 15 de agosto · Revisión PMO — demo de modelos Odoo, revisión de UI kit</div>
+
+          <div class="tl-week"><b>Semana 4</b><span class="who who-g">Gilberto</span><p>Modelo de disponibilidad y relaciones de datos completas</p></div>
+          <div class="tl-week"><b>Semana 4</b><span class="who who-r">Roberto</span><p>Setup del proyecto Flutter y navegación base</p></div>
+          <div class="pmo-checkpoint">🗓 Sábado 22 de agosto · Revisión PMO — cierre de mes 1, checklist antes de iniciar integración</div>
         </div>
       </div>
 
       <div class="tl-month">
         <div class="tl-month-head"><span class="tl-m">Mes 2</span><span class="tl-d">Septiembre 2026</span></div>
         <div class="tl-weeks">
-          <div class="tl-week"><b>Semana 1-2</b><span class="who who-g">Gilberto</span><p>Modelo de reservas con control de concurrencia (hold temporal), API REST de autenticación y descubrimiento</p></div>
-          <div class="tl-week"><b>Semana 1-2</b><span class="who who-r">Roberto</span><p>Pantallas de descubrimiento y detalle de oferta conectadas a datos reales (API de Gilberto)</p></div>
-          <div class="tl-week"><b>Semana 3-4</b><span class="who who-g">Gilberto</span><p>API de reservas y endpoints de pago (pre-integración PowerTranz)</p></div>
-          <div class="tl-week"><b>Semana 3-4</b><span class="who who-r">Roberto</span><p>Flujo de reserva y checkout en la app; primer punto de integración con backend</p></div>
+          <div class="tl-week"><b>Semana 5</b><span class="who who-g">Gilberto</span><p>Modelo de reservas con control de concurrencia (hold temporal)</p></div>
+          <div class="tl-week"><b>Semana 5</b><span class="who who-r">Roberto</span><p>Pantalla de descubrimiento conectada a datos reales</p></div>
+          <div class="pmo-checkpoint">🗓 Sábado 5 de septiembre · Revisión PMO — demo de descubrimiento en vivo, prueba de concurrencia</div>
+
+          <div class="tl-week"><b>Semana 6</b><span class="who who-g">Gilberto</span><p>API REST de autenticación y descubrimiento</p></div>
+          <div class="tl-week"><b>Semana 6</b><span class="who who-r">Roberto</span><p>Pantalla de detalle de oferta conectada a la API</p></div>
+          <div class="pmo-checkpoint">🗓 Sábado 12 de septiembre · Revisión PMO — validación de autenticación end-to-end</div>
+
+          <div class="tl-week"><b>Semana 7</b><span class="who who-g">Gilberto</span><p>API de reservas: creación y confirmación</p></div>
+          <div class="tl-week"><b>Semana 7</b><span class="who who-r">Roberto</span><p>Flujo de reserva en la app</p></div>
+          <div class="pmo-checkpoint">🗓 Sábado 19 de septiembre · Revisión PMO — demo de flujo de reserva completo (sin pago aún)</div>
+
+          <div class="tl-week"><b>Semana 8</b><span class="who who-g">Gilberto</span><p>Endpoints de pago (pre-integración PowerTranz)</p></div>
+          <div class="tl-week"><b>Semana 8</b><span class="who who-r">Roberto</span><p>Checkout en la app — primer punto de integración con backend</p></div>
+          <div class="pmo-checkpoint">🗓 Sábado 26 de septiembre · Revisión PMO — cierre de mes 2, readiness para integración de pagos</div>
         </div>
       </div>
 
       <div class="tl-month">
         <div class="tl-month-head"><span class="tl-m">Mes 3</span><span class="tl-d">Octubre 2026</span></div>
         <div class="tl-weeks">
-          <div class="tl-week"><b>Semana 1-2</b><span class="who who-g">Gilberto</span><p>Integración PowerTranz completa (webhook, idempotencia), lógica de recolección y códigos de un solo uso</p></div>
-          <div class="tl-week"><b>Semana 1-2</b><span class="who who-r">Roberto</span><p>Pantallas de pago, seguimiento de reserva y pickup (QR/PIN) en la app</p></div>
-          <div class="tl-week"><b>Semana 3-4</b><span class="who who-g">Gilberto</span><p>Backoffice: reporte de liquidación semi-manual, tablero de indicadores, ranking</p></div>
-          <div class="tl-week"><b>Semana 3-4</b><span class="who who-r">Roberto</span><p>Notificaciones push, favoritos, historial, perfil — pantallas restantes del MVP</p></div>
+          <div class="tl-week"><b>Semana 9</b><span class="who who-g">Gilberto</span><p>Integración PowerTranz: captura de pago y webhook</p></div>
+          <div class="tl-week"><b>Semana 9</b><span class="who who-r">Roberto</span><p>Pantalla de pago conectada a la pasarela</p></div>
+          <div class="pmo-checkpoint">🗓 Sábado 3 de octubre · Revisión PMO — demo de pago real en ambiente de pruebas</div>
+
+          <div class="tl-week"><b>Semana 10</b><span class="who who-g">Gilberto</span><p>Idempotencia y manejo de estados de pago</p></div>
+          <div class="tl-week"><b>Semana 10</b><span class="who who-r">Roberto</span><p>Seguimiento de reserva (estados en vivo)</p></div>
+          <div class="pmo-checkpoint">🗓 Sábado 10 de octubre · Revisión PMO — pruebas de casos de pago fallido/duplicado</div>
+
+          <div class="tl-week"><b>Semana 11</b><span class="who who-g">Gilberto</span><p>Lógica de recolección y código QR/PIN de un solo uso</p></div>
+          <div class="tl-week"><b>Semana 11</b><span class="who who-r">Roberto</span><p>Pantalla de pickup con QR/PIN</p></div>
+          <div class="pmo-checkpoint">🗓 Sábado 17 de octubre · Revisión PMO — demo de ciclo completo: reserva → pago → pickup</div>
+
+          <div class="tl-week"><b>Semana 12</b><span class="who who-g">Gilberto</span><p>Backoffice: reporte de liquidación semi-manual y tablero de indicadores</p></div>
+          <div class="tl-week"><b>Semana 12</b><span class="who who-r">Roberto</span><p>Notificaciones push, favoritos e historial</p></div>
+          <div class="pmo-checkpoint">🗓 Sábado 24 de octubre · Revisión PMO — cierre de mes 3, checklist pre-QA</div>
         </div>
       </div>
 
       <div class="tl-month">
         <div class="tl-month-head"><span class="tl-m">Mes 4</span><span class="tl-d">Noviembre 2026</span></div>
         <div class="tl-weeks">
-          <div class="tl-week"><b>Semana 1-2</b><span class="who who-both">Ambos</span><p>QA integral, pruebas de concurrencia (overselling), pruebas de pago, corrección de bugs</p></div>
-          <div class="tl-week"><b>Semana 2-3</b><span class="who who-r">Roberto</span><p>Build de producción, publicación en App Store / Google Play, revisión de políticas de tienda</p></div>
-          <div class="tl-week"><b>Semana 2-3</b><span class="who who-g">Gilberto</span><p>Despliegue a producción, migración de datos, monitoreo activo</p></div>
-          <div class="tl-week tl-week--launch"><b>Semana 4</b><span class="who who-both">🚀 Lanzamiento</span><p>Piloto en producción con comercios reales</p></div>
+          <div class="tl-week" style="grid-column:1/-1;"><b>Semana 13</b><span class="who who-both">Ambos</span><p>QA integral: pruebas de concurrencia (overselling), pruebas de pago, corrección de bugs</p></div>
+          <div class="pmo-checkpoint">🗓 Sábado 7 de noviembre · Revisión PMO — reporte de bugs y priorización de correcciones</div>
+
+          <div class="tl-week"><b>Semana 14</b><span class="who who-g">Gilberto</span><p>Corrección de bugs backend y endurecimiento de seguridad</p></div>
+          <div class="tl-week"><b>Semana 14</b><span class="who who-r">Roberto</span><p>Corrección de bugs de app y pulido de UI</p></div>
+          <div class="pmo-checkpoint">🗓 Sábado 14 de noviembre · Revisión PMO — validación de que los bugs críticos están cerrados</div>
+
+          <div class="tl-week"><b>Semana 15</b><span class="who who-r">Roberto</span><p>Build de producción y publicación en App Store / Google Play</p></div>
+          <div class="tl-week"><b>Semana 15</b><span class="who who-g">Gilberto</span><p>Despliegue a producción y monitoreo activo</p></div>
+          <div class="pmo-checkpoint">🗓 Sábado 21 de noviembre · Revisión PMO — go/no-go para lanzamiento</div>
+
+          <div class="tl-week tl-week--launch" style="grid-column:1/-1;"><b>Semana 16</b><span class="who who-both">🚀 Lanzamiento</span><p>Piloto en producción con comercios reales</p></div>
+          <div class="pmo-checkpoint">🗓 Sábado 28 de noviembre · Revisión PMO — retro de cierre y plan de soporte post-lanzamiento</div>
         </div>
       </div>
     </div>
